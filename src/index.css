@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Main brand colors */
+    --color-primary: 263.4 70% 50.4%;    /* Purple - your current primary */
+    --color-secondary: 215 27.9% 16.9%;  /* Dark blue-gray - your current secondary */
+    --color-accent: 215 27.9% 16.9%;     /* Currently same as secondary */
+    
+    /* Gray scale */
+    --color-gray-50: 210 20% 98%;
+    --color-gray-100: 220 14% 96%;
+    --color-gray-200: 220 13% 91%;
+    --color-gray-300: 216 12% 84%;
+    --color-gray-400: 218 11% 65%;
+    --color-gray-500: 220 9% 46%;
+    --color-gray-600: 215 14% 34%;
+    --color-gray-700: 217 19% 27%;
+    --color-gray-800: 215 28% 17%;
+    --color-gray-900: 221 39% 11%;
+    --color-gray-950: 224 71% 4%;
+    
+    /* Semantic colors */
+    --color-success: 142 72% 29%;    /* Green */
+    --color-warning: 38 92% 50%;     /* Yellow/Amber */
+    --color-error: 0 62.8% 30.6%;    /* Your current destructive color */
+    --color-info: 199 89% 48%;       /* Blue */
+    
+    /* Base colors - Dark theme by default (matching your current setup) */
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    
+    /* Component colors */
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: var(--color-primary);
+    --primary-foreground: 210 20% 98%;
+    --secondary: var(--color-secondary);
+    --secondary-foreground: 210 20% 98%;
+    --accent: var(--color-accent);
+    --accent-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --destructive: var(--color-error);
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: var(--color-primary);
+    
+    /* Chart colors */
+    --chart-1: var(--color-primary);
+    --chart-2: 200 95% 55%;  /* Blue */
+    --chart-3: 145 70% 50%;  /* Green */
+    --chart-4: 35 95% 55%;   /* Orange */
+    --chart-5: 0 90% 60%;    /* Red */
+    
+    --radius: 1rem;
+  }
+  
+  /* Light mode - if you want to add it later */
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 224 71.4% 4.1%;
+    
+    --card: 210 20% 98%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 210 20% 98%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: var(--color-primary);
+    --primary-foreground: 210 20% 98%;
+    --secondary: var(--color-secondary);
+    --secondary-foreground: 210 20% 98%;
+    --accent: var(--color-accent);
+    --accent-foreground: 210 20% 98%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+    --destructive: var(--color-error);
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: var(--color-primary);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .cl-socialButtonsBlockButton {
+    @apply text-white bg-secondary hover:bg-secondary/90;
+  }
+  
+  .cl-card {
+    @apply border-none bg-card;
+  }
+  
+  .cl-formFieldInput {
+    @apply bg-muted/50 border-input focus:border-primary text-foreground;
+  }
+  
+  .cl-dividerText {
+    @apply text-muted-foreground;
+  }
+  
+  .cl-dividerLine {
+    @apply bg-border;
+  }
+  
+  .cl-footerActionLink {
+    @apply text-primary hover:text-primary/90;
+  }
+  
+  .cl-headerTitle {
+    @apply text-foreground;
+  }
+  
+  .cl-headerSubtitle {
+    @apply text-muted-foreground;
+  }
+  .cl-formButtonPrimary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+  .cl-formFieldLabel {
+    @apply text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
