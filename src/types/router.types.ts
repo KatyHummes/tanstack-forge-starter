@@ -1,8 +1,8 @@
 import type { RegisteredRouter } from '@tanstack/react-router';
-import type { router } from '@/routes';
+import type { Register } from '@tanstack/react-router';
 
-export type Router = typeof router;
-export type RegisteredRouterType = RegisteredRouter<Router>;
+export type Router = Register['router'];
+export type RegisteredRouterType = RegisteredRouter;
 
 export interface RouteParams {
   [key: string]: string | undefined;

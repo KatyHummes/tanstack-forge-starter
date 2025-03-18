@@ -1,6 +1,6 @@
-import type { AuthUser } from './auth';
-import type { RecordWithId } from './common';
-import type { Post } from './post';
+import type { AuthUser } from './auth.types';
+import type { RecordWithId } from './common.types';
+import type { Post } from './post.types';
 
 export interface UserProfile extends RecordWithId {
   userId: string;

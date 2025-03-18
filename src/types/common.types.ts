@@ -10,11 +10,11 @@ export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 };
 
-export type RecordWithId = {
+export interface RecordWithId {
   id: string;
   createdAt: Date;
   updatedAt: Date;
-};
+}
 
 // Status Types
 export type Status = 'idle' | 'loading' | 'success' | 'error';

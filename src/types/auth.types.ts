@@ -3,13 +3,12 @@ import { AuthProvider, UserRole, UserStatus } from '@/lib/constants';
 export interface AuthUser {
   id: string;
   clerkId: string;
+  name: string;
   email: string;
-  name?: string;
-  role: UserRole;
-  status: UserStatus;
-  provider: AuthProvider;
-  emailVerified: boolean;
-  lastLogin?: Date;
+  image?: string;
+  role?: UserRole;
+  status?: UserStatus;
+  provider?: AuthProvider;
   createdAt: Date;
   updatedAt: Date;
 }

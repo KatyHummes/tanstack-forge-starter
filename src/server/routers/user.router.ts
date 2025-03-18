@@ -17,7 +17,6 @@ export const userRouter = router({
           id: true,
           name: true,
           email: true,
-          role: true,
         },
       });
     }),

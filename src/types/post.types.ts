@@ -1,5 +1,5 @@
-import type { RecordWithId } from './common';
-import type { User } from './user';
+import type { RecordWithId } from './common.types';
+import type { User } from './user.types';
 
 export interface Post extends RecordWithId {
   title: string;
