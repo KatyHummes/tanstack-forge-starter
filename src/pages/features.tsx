@@ -10,7 +10,6 @@ import {
   FormInput,
   Router,
   Search,
-  Boxes,
   Github,
   ArrowRightCircle,
   Database,
@@ -65,13 +64,13 @@ export function FeaturesPage() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_45%_at_50%_50%,var(--tw-gradient-from)_0%,transparent_100%)] from-primary/5" />
         <div className="flex items-center justify-center mb-4">
           <img 
-            src="https://tanstack.com/favicon.ico" 
-            alt="Tanstack Logo" 
+            src="/forge-logo.png" 
+            alt="TanStackForge Logo" 
             className="w-12 h-12"
           />
         </div>
         <h1 className="text-6xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80">
-          Tanstack Scaffold Starter
+          TanStack Forge Starter
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
           A modern full-stack starter template with end-to-end type safety, 
@@ -92,7 +91,7 @@ export function FeaturesPage() {
             </Button>
           )}
           <Button size="lg" variant="outline" className="gap-2" asChild>
-            <a href="https://tanstack.com/docs" target="_blank" rel="noopener">
+            <a href="https://github.com/kryptobaseddev/tanstack-forge-starter/blob/main/README.md" target="_blank" rel="noopener" className="flex items-center gap-2">
               Documentation <Code2 className="w-4 h-4" />
             </a>
           </Button>
@@ -101,7 +100,14 @@ export function FeaturesPage() {
 
       {/* Tanstack Features */}
       <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">The TanStack Suite</h2>
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <img 
+            src="https://tanstack.com/favicon.ico" 
+            alt="Tanstack Logo" 
+            className="w-8 h-8"
+          />
+          <h2 className="text-3xl font-bold text-center">The TanStack Suite</h2>
+        </div>
         <Tabs defaultValue="router" className="w-full">
           <TabsList className="flex justify-center mb-8 w-full gap-2 bg-transparent h-auto">
             {Object.entries(tanstackFeatures).map(([key, feature]) => (
@@ -182,6 +188,32 @@ export function FeaturesPage() {
             description="Hot reload, type checking, and excellent DX out of the box."
           />
         </div>
+      </div>
+
+      {/* GitHub CTA */}
+      <div className="container mx-auto px-4 py-8">
+        <Card className="bg-primary/5 border-primary/20">
+          <CardContent className="p-8 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Github className="w-8 h-8 text-primary" />
+              <h2 className="text-2xl font-bold">Open Source</h2>
+            </div>
+            <p className="text-muted-foreground mb-6">
+              TanStackForge is open source and available on GitHub. Star us to show your support!
+            </p>
+            <Button size="lg" variant="outline" asChild>
+              <a 
+                href="https://github.com/kryptobaseddev/tanstack-forge-starter" 
+                target="_blank" 
+                rel="noopener"
+                className="flex items-center gap-2"
+              >
+                <Github className="w-5 h-5" />
+                Star on GitHub
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

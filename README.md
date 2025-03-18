@@ -8,11 +8,11 @@ A modern, full-stack starter kit built on the TanStack suite, combining type-saf
 - 🔄 **[TanStack Query](https://tanstack.com/query)** - Data fetching and caching
 - 📝 **[TanStack Form](https://tanstack.com/form)** - Powerful form management 
 - 📊 **[TanStack Table](https://tanstack.com/table)** - Headless UI for building data tables
-- 🔒 **[Clerk](https://clerk.com/)** - Modern authentication with development mode support
-- 🔌 **[tRPC](https://trpc.io/)** - End-to-end type-safe APIs
-- 💾 **[Prisma](https://www.prisma.io/)** with **MongoDB** - Type-safe database access
-- 🎨 **[Shadcn UI](https://ui.shadcn.com/)** with **[Tailwind CSS](https://tailwindcss.com/)** - Beautiful UI components
-- ⚡ **[Vite](https://vitejs.dev/)** - Lightning fast development
+- 🔒 **[Clerk](https://clerk.com/docs)** - Modern authentication with development mode support
+- 🔌 **[tRPC](https://trpc.io/docs)** - End-to-end type-safe APIs
+- 💾 **[Prisma ORM](https://www.prisma.io/docs/orm)** with **MongoDB** - Type-safe database access
+- 🎨 **[Shadcn UI](https://ui.shadcn.com/docs)** with **[Tailwind CSS](https://tailwindcss.com/)** - Beautiful UI components
+- ⚡ **[Vite](https://v5.vite.dev/guide)** - Lightning fast development
 
 ## 🚀 Getting Started
 

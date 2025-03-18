@@ -1,13 +1,17 @@
-import { Link, Outlet } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
-import { Boxes, Github } from 'lucide-react';
+import { SiGithub } from 'react-icons/si';
 import { useAuth } from '@/components/auth/auth-context';
 import { AuthModal } from '@/components/auth/auth-modal';
 import { UserMenu } from '@/components/auth/user-menu';
 import { DevAuthModal } from '@/components/auth/dev-auth-modal';
 import { DevUserMenu } from '@/components/auth/dev-user-menu';
 
-export function RootLayout() {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export function RootLayout({ children }: RootLayoutProps) {
   const { isAuthenticated, isDevMode } = useAuth();
   const AuthComponent = isDevMode ? DevAuthModal : AuthModal;
   const UserMenuComponent = isDevMode ? DevUserMenu : UserMenu;
@@ -17,7 +21,7 @@ export function RootLayout() {
       <nav className="fixed w-full bg-background/80 backdrop-blur-sm border-b z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Boxes className="w-6 h-6 text-primary" />
+            <img src="/forge-logo.png" alt="TanStackForge Logo" className="w-8 h-8" />
             <span className="font-bold text-lg">TanStackForge</span>
           </div>
           <div className="flex items-center gap-4">
@@ -36,8 +40,8 @@ export function RootLayout() {
               <AuthComponent />
             )}
             <Button asChild>
-              <a href="https://github.com/your-repo/tanstack-forge" target="_blank" rel="noopener">
-                <Github className="mr-2 h-4 w-4" />
+              <a href="https://github.com/kryptobaseddev/tanstack-forge-starter" target="_blank" rel="noopener">
+                <SiGithub className="mr-2 h-4 w-4" />
                 Star on GitHub
               </a>
             </Button>
@@ -45,7 +49,7 @@ export function RootLayout() {
         </div>
       </nav>
       <main className="pt-16">
-        <Outlet />
+        {children}
       </main>
     </div>
   );

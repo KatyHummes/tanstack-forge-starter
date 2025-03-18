@@ -1,4 +1,4 @@
-import { ClerkProvider, ClerkProviderProps } from "@clerk/clerk-react";
+import { ClerkProvider } from "@clerk/clerk-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertTriangle } from "lucide-react";
 import { createContext, useContext, useState, ReactNode } from "react";
@@ -38,12 +38,7 @@ function DevAuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <DevAuthContext.Provider value={{ isSignedIn, setIsSignedIn }}>
-      <UnifiedAuthContext.Provider 
-        value={{ 
-          isDevMode: true, 
-          isAuthenticated: isSignedIn 
-        }}
-      >
+      <UnifiedAuthContext.Provider value={{ isDevMode: true, isAuthenticated: isSignedIn }}>
         <Alert variant="warning" className="mb-4 mx-4">
           <AlertTriangle className="h-4 w-4" />
           <AlertTitle>Development Mode</AlertTitle>
@@ -57,34 +52,38 @@ function DevAuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
-function ClerkAuthProvider({ children, ...props }: Omit<ClerkProviderProps, "publishableKey">) {
+function ClerkAuthProvider({ children }: { children: ReactNode }) {
   const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-  
+
   if (!publishableKey) {
-    console.error("Missing VITE_CLERK_PUBLISHABLE_KEY environment variable");
-    return <div>Authentication configuration error</div>;
+    return (
+      <Alert variant="warning" className="mb-4 mx-4">
+        <AlertTriangle className="h-4 w-4" />
+        <AlertTitle>Missing Clerk Publishable Key</AlertTitle>
+        <AlertDescription>
+          Please add your VITE_CLERK_PUBLISHABLE_KEY to the .env file
+        </AlertDescription>
+      </Alert>
+    );
   }
 
   return (
-    <ClerkProvider publishableKey={publishableKey} {...props}>
-      <UnifiedAuthContext.Provider 
-        value={{ 
-          isDevMode: false, 
-          isAuthenticated: false // This will be updated by the auth-context
-        }}
-      >
+    <ClerkProvider 
+      publishableKey={publishableKey}
+    >
+      <UnifiedAuthContext.Provider value={{ isDevMode: false, isAuthenticated: true }}>
         {children}
       </UnifiedAuthContext.Provider>
     </ClerkProvider>
   );
 }
 
-export function AuthProvider({ children, ...props }: Omit<ClerkProviderProps, "publishableKey">) {
-  const isDevMode = import.meta.env.VITE_DEV_MODE === 'true';
+export function AuthProvider({ children }: { children: ReactNode }) {
+  const isDevMode = import.meta.env.VITE_DEV_MODE === "true";
 
   if (isDevMode) {
     return <DevAuthProvider>{children}</DevAuthProvider>;
   }
 
-  return <ClerkAuthProvider {...props}>{children}</ClerkAuthProvider>;
+  return <ClerkAuthProvider>{children}</ClerkAuthProvider>;
 }
