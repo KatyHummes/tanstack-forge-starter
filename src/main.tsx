@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
 import { routeTree } from './routeTree.gen';
-import { AuthProvider } from './components/auth/auth-provider';
+import { AuthProvider } from './providers/auth-provider';
 import { TRPCProvider } from './providers/trpc-provider';
 import './index.css';
 

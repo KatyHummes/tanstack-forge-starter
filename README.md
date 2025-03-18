@@ -76,6 +76,7 @@ tanstack-forge/
 │   └── schema.prisma     # Prisma schema definition
 ├── public/               # Static assets
 ├── src/
+│   ├── api/              # External API routes
 │   ├── components/       # UI components
 │   │   ├── auth/        # Authentication components
 │   │   ├── common/      # Shared components
@@ -92,18 +93,17 @@ tanstack-forge/
 │   │   ├── trpc.ts      # tRPC setup
 │   │   └── utils.ts     # Utility functions
 │   ├── pages/           # Page components
-│   │   ├── index.tsx    # Home page route
 │   │   ├── about.tsx    # About page route
 │   │   ├── examples.tsx    # Examples page route
-│   │   ├── features.tsx    # Features page route
-│   │   └── home.tsx    # Home page route
+│   │   └── features.tsx    # Features page route
 │   ├── providers/       # React context providers
 │   │   ├── auth-provider.tsx    # Authentication provider
 │   │   └── trpc-provider.tsx    # tRPC provider
 │   ├── routes/          # File-based routing
 │   │   ├── __root.tsx   # Root layout and providers
-│   │   ├── index.tsx    # Home page route
-│   │   └── about.tsx    # About page route
+│   │   ├── index.tsx    # Home page route (used for the features page in this starter)
+│   │   ├── about.tsx    # About page route
+│   │   └── examples.tsx    # Examples page route
 │   ├── server/          # Backend logic
 │   │   ├── context.ts   # tRPC context
 │   │   ├── router.ts    # Base router setup

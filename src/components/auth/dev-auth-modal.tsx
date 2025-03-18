@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useDevAuth } from "./auth-provider";
+import { useDevAuth } from "../../providers/auth-provider";
 
 interface DevAuthModalProps {
   trigger?: React.ReactNode;

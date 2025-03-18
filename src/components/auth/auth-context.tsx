@@ -1,6 +1,6 @@
 import { createContext, useContext, ReactNode } from "react";
 import { useUser } from "@clerk/clerk-react";
-import { useUnifiedAuth } from "./auth-provider";
+import { useUnifiedAuth } from "../../providers/auth-provider";
 
 interface AuthContextType {
   isAuthenticated: boolean;

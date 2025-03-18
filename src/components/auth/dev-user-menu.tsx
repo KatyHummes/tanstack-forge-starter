@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useDevAuth } from "./auth-provider";
+import { useDevAuth } from "../../providers/auth-provider";
 import {
   DropdownMenu,
   DropdownMenuContent,
