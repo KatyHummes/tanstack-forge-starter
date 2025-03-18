@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 *.tsbuildinfo
+package-lock.json
+pnpm-lock.yaml
 
 # Editor directories and files
 .vscode/*
